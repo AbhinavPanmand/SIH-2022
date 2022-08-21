@@ -1,0 +1,182 @@
+.headline {
+	display: block;
+	margin: 10px 0 25px 0;
+	border-bottom: 1px dotted #e4e9f0;
+}
+
+.headline h2 {
+	font-size: 22px;
+}
+
+.headline h2,
+.headline h3,
+.headline h4 {
+	margin: 0 0 -2px 0;
+	padding-bottom: 5px;
+	display: inline-block;
+	border-bottom: 2px solid #06A3DA;
+}
+
+
+/*Headline (Titles) */
+.headline-center {
+	text-align: center;
+	position: relative;
+}
+
+.headline-center h2 {
+	color: #555;
+	font-size: 24px;
+	position: relative;
+	padding-bottom: 15px;
+}
+.headline-center p {
+	/*color: #999;*/
+	font-size: 14px;
+	/*padding: 0 150px;*/
+}
+
+/*Registration Form Control*/
+.form-control {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: #bbb;
+    box-shadow: 0 0 2px #c9c9c9;
+}
+
+/*Button Styles
+------------------------------------*/
+.btn {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.btn-u {
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 6px 13px;
+    position: relative;
+    background: #06A3DA;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+    width: 40%;
+    height: 110%;
+    margin-left: 60%;
+}
+
+.btn-u:hover {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-u.btn-brd:hover {
+    background: none;
+}
+
+.btn-u.btn-brd:focus {
+    background: none;
+}
+
+.btn-u.btn-brd.btn-brd-hover:hover {
+    color: #fff !important;
+}
+
+.btn-u.btn-brd {
+    color: #555;
+    background: none;
+    padding: 10px 13px;
+    border: solid 1px transparent;
+}
+
+.btn-u.btn-brd {
+    border-color: #06A3DA !important;
+}
+
+.btn-u.btn-brd:hover {
+    color: #06A3DA !important;
+    border-color: #06A3DA !important;
+}
+
+.btn-u.btn-brd.btn-brd-hover:hover {
+    background: #8ddcf8 !important;
+}
+
+input[type="radio"]{
+    margin-left: 2%;
+}
+
+input[type="date"]{
+    margin-left: 3%;
+    font-family: "Open Sans", sans-serif;
+    color: #6B6A75;
+    padding: 1%;
+    width: 40%;
+}
+
+
+input[type="time"]{
+    margin-left: 3%;
+    font-family: "Open Sans", sans-serif;
+    color: #6B6A75;
+    padding: 1%;
+    width: 30%;
+}
+
+select{
+    margin-left: 3%;
+    font-family: "Open Sans", sans-serif;
+    padding: 1%;
+    width: 50%;
+    color: rgb(107, 106, 117);
+}
+
+.hospitalname{
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.hospitalname:focus {
+    border-color: #bbb;
+    box-shadow: 0 0 2px #c9c9c9;
+}
+
+.fa-check:before {
+    content: "\f00c";
+    color: #2a5c6e
+  }
+
+
+.page-header a {
+    position: relative;
+    padding: 0 12px;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: "Jost", sans-serif;
+}
+
+.page-header a:hover {
+    color: #06A3DA;
+}
+
+.page-header a::after {
+    position: absolute;
+    content: "/";
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    right: -7px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.page-header a:last-child::after {
+    display: none;
+}

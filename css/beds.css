@@ -1,0 +1,154 @@
+.search_position{
+  margin-top: 90px;
+  position: relative;
+
+}
+
+
+#search_b {
+  width:300px; 
+  height:32px;
+  border-radius: 0%;
+}
+
+#search_icon{
+  position: absolute;
+  top: 30px;
+  left: 270px;
+}
+
+/* For Filter by Location */
+#selectField{
+  width: 400px;
+  border-radius: 0%;
+  height: 32px;
+  margin-left: 10px;
+}
+
+.optionsDiv{
+  position: absolute;
+  top: 280px;
+  left: 34px;
+}
+
+
+
+
+/* For Book Appointment Button */
+.book-appointment {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+.book-appointment {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+  }
+
+.book-appointment:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+
+.dropDown12 {
+  width: 30%;
+  height: 2.4375rem;
+  text-align: initial;
+  background-color: rgb(51, 153, 221);
+  color: white;
+
+}
+
+
+/* .bed-types {
+  list-style-type: none;
+  margin:  0 2% 2% 0;
+  padding: 10px; 
+  margin-bottom: 7%;
+}
+
+.bed-types li {
+  float: left;
+  margin: 2%;
+  width:20%;
+  height: auto;
+  position: relative;
+}
+
+.bed-types input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+  width: 150%;
+}
+
+.bed-types input[type="radio"]:checked+label,
+.Checked+label {
+  background: #07e4e4;
+}
+
+.bed-types label {
+  padding: 8%;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+  width: 150%;
+  
+}
+
+.bed-types label:hover {
+  background: #06A3DA;
+} */
+
+.bed-types {
+  list-style-type: none;
+  width: 100%;
+  padding: 10px 10px 10px 0px;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.bed-types li {
+  width: 20%;
+  /* background:rgb(51, 153, 221); */
+  position: relative;
+  height: auto;
+  display: inline-block;
+}
+
+.bed-types input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+  text-align: center;
+}
+
+.bed-types:after {
+  content: '';
+  display: inline-block;
+  /* width: 100%; */
+}
+
+.bed-types label {
+  padding: 5%;
+  cursor: pointer;
+  z-index: 90;
+  border: 1px solid #07e4e4;
+  width: -webkit-fill-available;
+}
+
+.bed-types input[type="radio"]:checked+label,
+.Checked+label {
+  background: #07e4e4;
+}
+
+.bed-types label:hover {
+  background: #06A3DA;
+}

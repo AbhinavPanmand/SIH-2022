@@ -1,0 +1,31 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+    <a href="first.html" class="navbar-brand p-0">
+        <h1 class="m-0 text-primary"><i class="fa fa-hospital me-2"></i>Svastya Seva</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div id="navigation" class="navbar-nav ms-auto py-0">
+            <a href="first.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="services.html" class="nav-item nav-link">Service</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+<script>
+    var current  = window.location.href.split('/')[3];
+    var navLinks = $("div#navigation a");
+    for (let i = 0; i < navLinks.length; i++) {
+        const element = navLinks[i];
+        console.log((element.href).split('/')[3]);
+        if(current == (element.href).split('/')[3]) {
+            element.classList.add('active')
+        } 
+    }
+</script>
+<!-- Navbar End -->

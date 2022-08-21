@@ -1,0 +1,74 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+import { getDatabase, set, ref, } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAlk8i5tEPlqosAbDP-Ogir8BGRqVRsAxE",
+  authDomain: "swaystya.firebaseapp.com",
+  databaseURL: "https://swaystya-default-rtdb.firebaseio.com",
+  projectId: "swaystya",
+  storageBucket: "swaystya.appspot.com",
+  messagingSenderId: "565865735826",
+  appId: "1:565865735826:web:4f290f03bc70e1c19fe84b",
+  measurementId: "G-ER6C8H148Z",
+};
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+  var FIRSTNAME = getElementVal("first-name");
+  var LASTNAME = getElementVal("last-name");
+  var PHONENUMBER = getElementVal("phone-number");
+  var EMAIL = getElementVal("email");
+  var GENDER = getElementVal("Male");
+  var HOSPITALNAME = getElementVal("hospitalname");
+  var DATEOFAPPOINTMENT = getElementVal("date");
+  var TIME = getElementVal("Time");
+  var SYMPTOMS = getElementVal("symptoms");
+
+  saveMessages(
+    FIRSTNAME,
+    LASTNAME,
+    PHONENUMBER,
+    EMAIL,
+    GENDER,
+    HOSPITALNAME,
+    DATEOFAPPOINTMENT,
+    TIME,
+    SYMPTOMS
+  );
+  document.getElementById("contactForm").reset();
+}
+
+function saveMessages(
+  FIRSTNAME,
+  LASTNAME,
+  PHONENUMBER,
+  EMAIL,
+  GENDER,
+  HOSPITALNAME,
+  DATEOFAPPOINTMENT,
+  TIME,
+  SYMPTOMS
+) {
+  var abcd = Math.floor(Math.random() * 100);
+  set(ref(database, "Appointments/" + abcd), {
+    firstname: FIRSTNAME,
+    lastname: LASTNAME,
+    phonenumber: PHONENUMBER,
+    email: EMAIL,
+    gender: GENDER,
+    hospitalname: HOSPITALNAME,
+    dateofappointment: DATEOFAPPOINTMENT,
+    time: TIME,
+    symptoms: SYMPTOMS,
+  });
+}
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};

@@ -1,0 +1,272 @@
+<!DOCTYPE html lang="en">
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hospital Beds</title>
+
+  <link rel="stylesheet" id="app-css-css" href="css/app.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/beds.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/beds.js"></script>
+  <script type="text/javascript" src="https://kit.fontawesome.com/3cca4a8f7a.js" id="fontawesome-js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <link href="img/favicon.ico" rel="icon" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+  <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <link href="css/navbar.css" rel="stylesheet">
+
+  <link href="css/search.css" rel="stylesheet">
+
+  <!-- Javascript Files-->
+  <script src="js/beds.js"></script>
+  <script src="js/db_beds.js" type="module"></script>
+
+</head>
+
+<body data-rsssl="1">
+
+  <!-- Navbar Start -->
+  <div id="nav-placeholder" class="sticky-top"></div>
+  <!-- Navbar End -->
+
+  <!-- Carousel Start -->
+  <div class="container-fluid p-0">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <!-- <div class="carousel-inner">
+        <div class="carousel-item active"> -->
+      <img style="width:100%; height: 70%" src="img/adhy-savala-zbpgmGe27p8-unsplash.jpg" alt="Image">
+      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+        <div class="p-3" style="max-width: 900px;">
+          <h5 class="text-white text-uppercase mb-3 animated slideInDown"></h5>
+          <h1 class="display-1 text-white mb-md-4 animated zoomIn">Beds Availability</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- Carousel End -->
+
+  <div class="main-body grid-container-xl banner mb-5">
+    <div class="grid-x grid-padding-x align-center">
+      <div class="cell auto">
+        <div class="grid-x grid-margin-x my-4">
+          <div class="cell auto">
+            <div class="callout primary">
+              <h5>Total</h5>
+              <h1 id="total"></h1>
+            </div>
+          </div>
+          <div class="cell auto">
+            <div class="callout primary">
+              <h5>Occupied</h5>
+              <h1 id="occupied"></h1>
+            </div>
+          </div>
+          <div class="cell auto">
+            <div class="callout primary">
+              <h5>Vacant</h5>
+              <h1 id="vacant"></h1>
+            </div>
+          </div>
+        </div>
+        <!-- <p class="legend"> -->
+
+          <!-- Availability:
+          <button class="btn btn-primary" onclick="filerHospitals('success')">Over 50 beds</button>
+          <button class="btn btn-secondary" onclick="filerHospitals('warning')">Under 50 beds</button>
+          <button class="btn btn-danger" onclick="filerHospitals('alert')">No beds</button> -->
+
+        <ul class="bed-types">
+          <li>
+            <input type="radio" id="emergencyBeds" name="typeofbed" checked />
+            <label for="emergencyBeds">Emergency Beds</label>
+          </li>
+          <li>
+            <input type="radio" id="icuBeds" name="typeofbed" />
+            <label for="icuBeds">ICU Beds</label>
+          </li>
+          <li>
+            <input type="radio" id="iccuBeds" name="typeofbed" />
+            <label for="iccuBeds">ICCU Beds</label>
+          </li>
+          <li>
+            <input type="radio" id="generalWardBeds" name="typeofbed" />
+            <label for="generalWardBeds">General Ward Beds</label>
+          </li>
+        </ul>
+
+        <!-- </p> -->
+
+        <div class="search-bar-bar">
+          <!-- <div id="select"> -->
+          <select id="list" class="dropdown12" onmousedown="this.value='';" onchange="filerByLocation(this.value)">
+            <option class="options" value="all" selected>All</option>
+            <option class="options" value="mumbai">Mumbai</option>
+            <option class="options" value="andheri">Andheri</option>
+            <option class="options" value="seawoods">Seawoods</option>
+            <option class="options" value="vashi">Vashi</option>
+          </select>
+          <!-- </div> -->
+          <input type="text" id="inputfield" style="font-family: Josh, sans-serif;margin-top: 2%;"
+            placeholder="Search for Hospitals in the State" onkeyup="searchHospital()">
+        </div>
+
+        <div id="myHeader">
+          <table id="beds" class="beds-table">
+            <thead>
+              <tr id="header">
+                <th data-sort="string" width="30%">Name</th>
+                <th class="text-center" data-sort="string" class="show-for-medium" width="13%">
+                  Location
+                </th>
+                <th class="text-center" data-sort="string" class="show-for-medium" width="5%">
+                  Type
+                </th>
+                <th class="text-center" data-sort="int" data-sort-default="desc" width="18%">
+                  <span id="bedTypeV">Emergency Beds</span>
+                  <br>
+                  Vacant
+                </th>
+                <th class="text-center" data-sort="int" data-sort-default="desc" data-sort-onload="yes" width="18%">
+                  <span id="bedTypeO">Emergency Beds</span>
+                  <br>
+                  Occupied
+                </th>
+                <th class="text-center" width="16%">Appointment</th>
+              </tr>
+            </thead>
+
+            <tbody id="tableBody">
+              <tr id="defaultRow" hidden>
+                <td>
+                  <h5 class="vac-under50"></h5>
+                  <address></address>
+                  <p></p>
+                  <div class="numbers">
+                    <i class="fa fa-phone-alt"></i><a></a>
+                    <a href="" target="_blank"><i class="fa fa-map-marker-alt"></i>Location</a>
+                  </div>
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center show-for-medium">
+                  <div class="label"></div>
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center" id="game"></td>
+                <td class="text-center">
+                  <button class="book-appointment" style="width: 150px; border-radius: 0%">
+                    Book Appointment
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s">
+    <div class="container pt-5">
+      <div class="row g-5 pt-4">
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About
+              Us</a>
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a>
+            <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Popular Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About
+              Us</a>
+            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Services</a>
+            <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Get In Touch</h3>
+          <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p>
+          <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@example.com</p>
+          <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Follow Us</h3>
+          <div class="d-flex">
+            <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i
+                class="fab fa-twitter fw-normal"></i></a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i
+                class="fab fa-facebook-f fw-normal"></i></a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded me-2" href="#"><i
+                class="fab fa-linkedin-in fw-normal"></i></a>
+            <a class="btn btn-lg btn-primary btn-lg-square rounded" href="#"><i
+                class="fab fa-instagram fw-normal"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-light py-4" style="background: #051225;">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-md-0">&copy; <a class="text-white border-bottom" href="#">Svastya Seva</a>. All
+            Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <script>
+    $("#nav-placeholder").load("nav.html");
+  </script>
+</body>
+
+</html>
