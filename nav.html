@@ -22,7 +22,6 @@
     var navLinks = $("div#navigation a");
     for (let i = 0; i < navLinks.length; i++) {
         const element = navLinks[i];
-        console.log((element.href).split('/')[3]);
         if(current == (element.href).split('/')[3]) {
             element.classList.add('active')
         } 

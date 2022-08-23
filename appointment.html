@@ -216,16 +216,6 @@
     <!--=== End Content Part ===-->
 
     <script>
-    // var d = new Date();
-    // console.log(d);
-    // var g = document.getElementById('date').value;
-    // console.log(g);
-    // var datestring = ("0" + d.getDate()).slice(-2) + "/" + ("0"+(d.getMonth()+1)).slice(-2) + "/" + (d.getFullYear()).toString().substr(-2);
-
-    // console.log(datestring);
-    </script>
-
-    <script>
 
         function sendMail() {
             var listOfHospitals = ['Aastha Hospital', 'Aash Hospital', 'Aashlok Hospital']
@@ -238,10 +228,6 @@
             var dateofappointment = document.getElementById('date').value
             var time = document.getElementById('Time').value
             var SYMptoms = document.getElementById('symptoms').value
-console.log(dateofappointment);
-            // var formatDate = dateofappointment.split('-')
-            // // var newformatDate = formatDate[2] + '-' + formatDate[1] + '-' + formatDate[0] 
-            // console.log(formatDate);
 
             var Body = 'Hello ' + fname + ' ' + lname + ','
                 + '<br>Your Appointment is booked with ' + hospitalNAME

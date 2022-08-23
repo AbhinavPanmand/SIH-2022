@@ -135,7 +135,6 @@ $(document).ready(function () {
   var prev = null;
   for (var i = 0; i < rad.length; i++) {
     rad[i].addEventListener("change", function () {
-      prev ? console.log(prev.id) : null;
       if (this !== prev) {
         let data = JSON.parse(localStorage.getItem("hospitalData") || "[]");
         AddAllItemsToTable(data);
