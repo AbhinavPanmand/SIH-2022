@@ -24,7 +24,8 @@ function submitForm(e) {
   var LASTNAME = getElementVal("last-name");
   var PHONENUMBER = getElementVal("phone-number");
   var EMAIL = getElementVal("email");
-  var GENDER = getElementVal("Male");
+  // var GENDER = getElementVal("Male");
+  var GENDER = localStorage.getItem("Gender");
   var HOSPITALNAME = getElementVal("hospitalname");
   var DATEOFAPPOINTMENT = getElementVal("date");
   var TIME = getElementVal("Time");

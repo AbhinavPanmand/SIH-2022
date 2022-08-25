@@ -30,6 +30,7 @@ function AddItemToTable(element) {
   newRow.cells[0].childNodes.forEach((el) => {
     if (el.nodeName == "H5") {
       el.innerHTML = element.nameOfHospital;
+      localStorage.setItem('nameofHospital',el.innerHTML);
     }
     if (el.nodeName == "ADDRESS") {
       el.innerHTML = element.address;
@@ -82,6 +83,8 @@ function AddItemToTable(element) {
   }
   newRow.cells[3].innerHTML = element[selectedBedType].vacant;
   newRow.cells[4].innerHTML = element[selectedBedType].occupied;
+
+  newRow.cells[5].innerHTML = element[selectedBedType].vacant + element[selectedBedType].occupied;
 
   newRow.removeAttribute("hidden");
   newRow.setAttribute("id", count);

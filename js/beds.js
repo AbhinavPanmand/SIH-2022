@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
   // Color Change
   var content_vacancy = $("td#game");

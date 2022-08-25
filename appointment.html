@@ -110,11 +110,11 @@
 
                         <section>
                             <label>Gender <span class="color-red">*</span></label>
-                            <input type="radio" id="Male" name="Gender" value="Male">
+                            <input type="radio" id="Male" name="Gender" value="M">
                             <label for="Male">M</label>
-                            <input type="radio" id="Male" name="Gender" value="Female">
+                            <input type="radio" id="Female" name="Gender" value="F">
                             <label for="Female">F</label>
-                            <input type="radio" id="Male" name="Gender" value="Others">
+                            <input type="radio" id="Others" name="Gender" value="Others">
                             <label for="Others">Others</label><br><br>
                         </section>
 
@@ -133,8 +133,7 @@
                         <div class="row">
                             <section class="col col-sm-12">
                                 <label for="appointment">Date of Appointment <span class="color-red">*</span></label>
-                                <input type="date" id="date" name="appointment" value="2022-01-12"
-                                    required=""><br><br>
+                                <input type="date" id="date" name="appointment" value="2022-01-12" required=""><br><br>
                             </section>
 
                             <section class="col col-sm-12">
@@ -216,6 +215,12 @@
     <!--=== End Content Part ===-->
 
     <script>
+        var bcdhwuh = localStorage.getItem('VAcant123');
+        console.log(bcdhwuh);
+
+    </script>
+
+    <script>
 
         function sendMail() {
             var listOfHospitals = ['Aastha Hospital', 'Aash Hospital', 'Aashlok Hospital']
@@ -223,7 +228,19 @@
             var lname = document.getElementById('last-name').value
             var emailid = document.getElementById('email').value
             var phoneno = document.getElementById('phone-number').value
-            var gender = document.getElementById('Male').value
+
+            if (document.getElementById('Male').checked) {
+                var gender = document.getElementById('Male').value;
+            }
+            else if (document.getElementById('Female').checked) {
+                var gender = document.getElementById('Female').value;
+            }
+            else if (document.getElementById('Others').checked) {
+                var gender = document.getElementById('Others').value;;
+            }
+
+            localStorage.setItem('Gender', gender)
+
             var hospitalNAME = document.getElementById('hospitalname').value
             var dateofappointment = document.getElementById('date').value
             var time = document.getElementById('Time').value
@@ -251,7 +268,7 @@
             Email.send({
                 SecureToken: "baf4b657-6661-4044-8cd1-9de03c890f9c",
                 To: senderEmail,
-                From: "hackeliteprosih2022@gmail.com",
+                From: "abhipanmand01@gmail.com",
                 Subject: "Svastya Seva - Appointment Booked",
                 Body: Body
 
@@ -269,7 +286,7 @@
         }
 
     </script>
-    
+
 
     <script type="module" src="js/db.js"></script>
 
