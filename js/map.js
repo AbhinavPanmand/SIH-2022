@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   });
   
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0aGVyY2F0ZXYiLCJhIjoiY2wyN2w3M256MDBqYjN0bW1uOG16ZzVqdiJ9.apozKCwK2RIwWPweckfjSg';
+  mapboxgl.accessToken = '';
   
   navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     enableHighAccuracy: true
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function setUpMap(center) {
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/esthercatev/cl29khs4v000514ms5eiyerq3',
+      style: '',
       center: center,
       zoom: 15
     })

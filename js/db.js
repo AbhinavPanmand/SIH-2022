@@ -2,14 +2,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase
 import { getDatabase, set, ref, } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlk8i5tEPlqosAbDP-Ogir8BGRqVRsAxE",
-  authDomain: "swaystya.firebaseapp.com",
-  databaseURL: "https://swaystya-default-rtdb.firebaseio.com",
-  projectId: "swaystya",
-  storageBucket: "swaystya.appspot.com",
-  messagingSenderId: "565865735826",
-  appId: "1:565865735826:web:4f290f03bc70e1c19fe84b",
-  measurementId: "G-ER6C8H148Z",
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
 };
 
 const app = initializeApp(firebaseConfig);
