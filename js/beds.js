@@ -16,6 +16,7 @@ $(document).ready(function () {
 
 
 
+
   //Loaction Dropdown
   // document.getElementById("select").onclick = function () {
   //   document.getElementById("list").classList.toggle("open");

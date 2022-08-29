@@ -66,11 +66,11 @@
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <!-- <div class="carousel-inner">
         <div class="carousel-item active"> -->
-      <img style="width:100%; height: 70%" src="img/adhy-savala-zbpgmGe27p8-unsplash.jpg" alt="Image">
+      <img style="width:100%; height: 50%" src="img/adhy-savala-zbpgmGe27p8-unsplash.jpg" alt="Image">
       <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
         <div class="p-3" style="max-width: 900px;">
           <h5 class="text-white text-uppercase mb-3 animated slideInDown"></h5>
-          <h1 class="display-1 text-white mb-md-4 animated zoomIn">Beds Availability</h1>
+          <h1 class="display-1 text-white mb-md-4 animated zoomIn" style="margin-top: -20%;">Beds Availability</h1>
         </div>
       </div>
     </div>
@@ -79,10 +79,12 @@
   </div>
   <!-- Carousel End -->
 
+
+
   <div class="main-body grid-container-xl banner mb-5">
     <div class="grid-x grid-padding-x align-center">
       <div class="cell auto">
-        <div class="grid-x grid-margin-x my-4">
+        <div class="grid-x grid-margin-x">
           <div class="cell auto">
             <div class="callout primary">
               <h5>Total</h5>
@@ -104,27 +106,28 @@
         </div>
         <!-- <p class="legend"> -->
 
-          <!-- Availability:
+        <!-- Availability:
           <button class="btn btn-primary" onclick="filerHospitals('success')">Over 50 beds</button>
           <button class="btn btn-secondary" onclick="filerHospitals('warning')">Under 50 beds</button>
           <button class="btn btn-danger" onclick="filerHospitals('alert')">No beds</button> -->
 
         <ul class="bed-types">
           <li>
-            <input type="radio" id="emergencyBeds" name="typeofbed" checked />
-            <label for="emergencyBeds">Emergency Beds</label>
+            <input type="radio" id="EMERGENCY" name="typeofbed" checked />
+            <label for="EMERGENCY" style="background:#da3030; color: white;">Emergency Beds</label>
+          </li>
+
+          <li>
+            <input type="radio" id="ICU" name="typeofbed" />
+            <label for="ICU" style="background:#28e8b9;color: white;">ICU Beds</label>
           </li>
           <li>
-            <input type="radio" id="icuBeds" name="typeofbed" />
-            <label for="icuBeds">ICU Beds</label>
+            <input type="radio" id="ICCU" name="typeofbed" />
+            <label for="ICCU" style="background: #f57341;color: white;">ICCU Beds</label>
           </li>
           <li>
-            <input type="radio" id="iccuBeds" name="typeofbed" />
-            <label for="iccuBeds">ICCU Beds</label>
-          </li>
-          <li>
-            <input type="radio" id="generalWardBeds" name="typeofbed" />
-            <label for="generalWardBeds">General Ward Beds</label>
+            <input type="radio" id="GENERAL" name="typeofbed" />
+            <label for="GENERAL" style="background: #002fff;color: white;">General Ward Beds</label>
           </li>
         </ul>
 
@@ -156,17 +159,20 @@
                   Type
                 </th>
                 <th class="text-center" data-sort="int" data-sort-default="desc" width="15%">
-                  <span id="bedTypeV">Emergency Beds</span>
-                  <br>
+                  <!-- <span id="bedTypeV">Emergency Beds</span>
+                  <br> -->
                   Vacant
                 </th>
                 <th class="text-center" data-sort="int" data-sort-default="desc" data-sort-onload="yes" width="15%">
-                  <span id="bedTypeO">Emergency Beds</span>
-                  <br>
+                  <!-- <span id="bedTypeO">Emergency Beds</span>
+                  <br> -->
                   Occupied
                 </th>
                 <th class="text-center" data-sort="string" class="show-for-medium" width="15%">
                   Total Beds
+                </th>
+                <th class="text-center" class="show-for-medium" width="15%">
+                  Appointment
                 </th>
               </tr>
             </thead>
@@ -189,6 +195,8 @@
                 <td class="text-center"></td>
                 <td class="text-center" id="game"></td>
                 <td class="text-center"></td>
+                <td><button id="Button" class="button button2" onclick="location.href='appointment.html'" type="button">
+                    Book Appointment</button></td>
               </tr>
             </tbody>
           </table>
@@ -196,6 +204,31 @@
       </div>
     </div>
   </div>
+
+  <script>
+    var bcdef = localStorage.getItem('nameOfHospital');
+    console.log(bcdef);
+  </script>
+  
+
+
+  <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button2 {
+      background-color: #008CBA;
+    }
+  </style>
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s">

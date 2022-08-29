@@ -138,7 +138,7 @@ h6,
 @media (min-width: 991.98px) {
     .banner {
         position: relative;
-        margin-top: -90px;
+        margin-top: -150px;
         z-index: 1;
     }
 }

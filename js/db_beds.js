@@ -23,14 +23,18 @@ const db = getDatabase();
 var tbody = document.getElementById("tableBody");
 var count = 0;
 
+
+
 function AddItemToTable(element) {
   count += 1;
+
   var trow = document.getElementById("defaultRow");
   var newRow = trow.cloneNode(true);
   newRow.cells[0].childNodes.forEach((el) => {
     if (el.nodeName == "H5") {
       el.innerHTML = element.nameOfHospital;
-      localStorage.setItem('nameofHospital',el.innerHTML);
+      localStorage.setItem('nameofHospital',element.nameOfHospital);
+    
     }
     if (el.nodeName == "ADDRESS") {
       el.innerHTML = element.address;
@@ -70,21 +74,30 @@ function AddItemToTable(element) {
     if (el.nodeName == "P") {
       el.innerHTML = "Last updated at: " + element.time;
     }
+    
   });
+
 
   newRow.cells[1].innerHTML = element.location;
   newRow.cells[2].childNodes[1].innerHTML = element.type;
   let selectedBedType = document.querySelector(
     'input[name="typeofbed"]:checked'
   ).id;
-  if(count == 1) {
-    document.getElementById('bedTypeV').innerHTML = element[selectedBedType].displayName
-    document.getElementById('bedTypeO').innerHTML = element[selectedBedType].displayName
-  }
-  newRow.cells[3].innerHTML = element[selectedBedType].vacant;
-  newRow.cells[4].innerHTML = element[selectedBedType].occupied;
 
-  newRow.cells[5].innerHTML = element[selectedBedType].vacant + element[selectedBedType].occupied;
+  newRow.cells[3].innerHTML = 4-(element[selectedBedType]);
+  newRow.cells[4].innerHTML = element[selectedBedType];
+ 
+  if (newRow.cells[3].innerHTML == 0) {
+    alert('NO VACANT BEDS -');
+    alert(element.nameOfHospital);
+    // console.log("HEllo");('NO VACANT BEDS -')
+    // console.log("HEllo");(element.nameOfHospital)
+
+  }
+
+  console.log(element[selectedBedType]);
+
+  newRow.cells[5].innerHTML = 4;
 
   newRow.removeAttribute("hidden");
   newRow.setAttribute("id", count);
@@ -95,7 +108,7 @@ function AddItemToTable(element) {
 function GetAllDataOnce() {
   const dbRef = ref(db);
 
-  get(child(dbRef, "HospitalData")).then((snapshot) => {
+  get(child(dbRef, "Beds")).then((snapshot) => {
     var students = [];
 
     snapshot.forEach((childSnapshot) => {
@@ -120,7 +133,7 @@ function AddAllItemsToTable(hospitalData) {
 
 function GetAllDataRealtime() {
   localStorage.clear();
-  const dbRef = ref(db, "HospitalData");
+  const dbRef = ref(db, "Beds");
   onValue(dbRef, (snapshot) => {
     var hospitalData = [];
 

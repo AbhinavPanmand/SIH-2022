@@ -67,8 +67,9 @@
     display: inline-block;
     text-decoration: none;
     width: 40%;
-    height: 110%;
+    height: 70%;
     margin-left: 60%;
+    margin-bottom: 5%;
 }
 
 .btn-u:hover {

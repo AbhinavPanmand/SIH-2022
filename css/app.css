@@ -1207,7 +1207,8 @@ screen and (min-width: 64.0625em) {
 
 .grid-margin-x {
     margin-left: -0.625rem;
-    margin-right: -0.625rem
+    margin-right: -0.625rem;
+    margin-top: 1.5%
 }
 
 @media print,

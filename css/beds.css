@@ -63,7 +63,7 @@
   width: 30%;
   height: 2.4375rem;
   text-align: initial;
-  background-color: rgb(51, 153, 221);
+  background-color: #344c64;
   color: white;
 
 }
@@ -140,15 +140,5 @@
   padding: 5%;
   cursor: pointer;
   z-index: 90;
-  border: 1px solid #07e4e4;
   width: -webkit-fill-available;
-}
-
-.bed-types input[type="radio"]:checked+label,
-.Checked+label {
-  background: #07e4e4;
-}
-
-.bed-types label:hover {
-  background: #06A3DA;
 }

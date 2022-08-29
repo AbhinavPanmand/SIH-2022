@@ -178,7 +178,7 @@ ol,
 ul,
 dl {
     margin-top: 0;
-    margin-bottom: 1rem
+    margin-bottom: 0
 }
 
 ol ol,
@@ -504,7 +504,7 @@ progress {
 
 @media (min-width: 1200px) {
     .display-1 {
-        font-size: 5rem
+        font-size: 3rem
     }
 }
 
@@ -6892,7 +6892,7 @@ fieldset:disabled .btn {
 }
 
 .w-50 {
-    width: 50% !important
+    width: 35% !important
 }
 
 .w-75 {
@@ -6900,7 +6900,7 @@ fieldset:disabled .btn {
 }
 
 .w-100 {
-    width: 100% !important
+    width:48% !important;
 }
 
 .w-auto {
@@ -9209,8 +9209,7 @@ fieldset:disabled .btn {
     }
 
     .mb-md-4 {
-        margin-bottom: 1.5rem !important
-    }
+        margin-bottom: 1.5rem !important;    }
 
     .mb-md-5 {
         margin-bottom: 3rem !important
