@@ -20,31 +20,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   function errorLocation() {
-    setUpMap([36.817223, -1.286389])
+    setUpMap([42.901234, -5.764882])
   }
   
   function setUpMap(center) {
     const map = new mapboxgl.Map({
       container: 'map',
       style: '',
-      center: center,
-      zoom: 15
+      zoom: 20,
+      center: center
     })
   
-    //adds direction plugin
     map.addControl(
       new MapboxDirections({
         accessToken: mapboxgl.accessToken
       }),
-      'top-left'
     );
   
     const marker = new mapboxgl.Marker({
         color: "#ff0000",
         draggable: true
-      }).setLngLat([36.9011852, -1.318583])
+      }).setLngLat([42.901234, -5.764882])
       .addTo(map);
-  
-    //adds zoom and rotate controls
+
     const navControls = map.addControl(new mapboxgl.NavigationControl());
   }
